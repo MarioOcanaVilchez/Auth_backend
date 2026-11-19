@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: auth-backend-ts
+    runtime: node
+    plan: free
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: conection
+        sync: false
+      - key: SECRET_JWT_SEED
+        sync: false
